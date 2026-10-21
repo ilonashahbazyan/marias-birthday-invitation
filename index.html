@@ -1,1 +1,1753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Maria's Birthday | 23 November</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Rye&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --pink: #F26A8D;
+      --soft-pink: #F49CBB;
+      --blue: #CBEEF3;
+
+      --cream: #FFF9F6;
+      --white: #FFFFFF;
+      --brown: #6A4036;
+      --dark: #432E2A;
+      --light-brown: #A46C5D;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    .western {
+      font-family: "Rye", serif;
+      font-weight: 400;
+    }
+
+    .section {
+      padding: 100px 20px;
+    }
+
+    .container {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--pink);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.1;
+      color: var(--brown);
+    }
+
+    .section-intro {
+      max-width: 600px;
+      margin: 18px auto 0;
+      font-size: 17px;
+      line-height: 1.8;
+      color: #745D57;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    /* ---------------------------------
+       HERO
+    ---------------------------------- */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 70px 25px;
+
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(255,255,255,.65),
+          transparent 24%
+        ),
+        radial-gradient(
+          circle at 90% 90%,
+          rgba(255,255,255,.45),
+          transparent 25%
+        ),
+        linear-gradient(
+          135deg,
+          var(--soft-pink),
+          var(--blue)
+        );
+
+      overflow: hidden;
+    }
+
+    .hero-star {
+      position: absolute;
+      font-size: 130px;
+      opacity: .09;
+      pointer-events: none;
+    }
+
+    .star-one {
+      top: 20px;
+      left: -25px;
+      transform: rotate(-20deg);
+    }
+
+    .star-two {
+      bottom: 10px;
+      right: -20px;
+      transform: rotate(20deg);
+    }
+
+    .hero-inner {
+      width: min(1100px, 100%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-copy {
+      max-width: 560px;
+    }
+
+    .mini-text {
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(58px, 9vw, 110px);
+      line-height: .92;
+      color: var(--white);
+      text-shadow: 0 5px 0 rgba(106,64,54,.12);
+    }
+
+    .hero h1 span {
+      color: var(--brown);
+      display: block;
+      font-size: .53em;
+      margin-top: 12px;
+    }
+
+    .hero-description {
+      margin-top: 28px;
+      max-width: 480px;
+      line-height: 1.8;
+      font-size: 17px;
+      color: var(--dark);
+    }
+
+    .hero-details {
+      margin-top: 28px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-pill {
+      padding: 11px 18px;
+      border-radius: 100px;
+      background: rgba(255,255,255,.7);
+      border: 1px solid rgba(255,255,255,.9);
+      backdrop-filter: blur(10px);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 27px;
+      border-radius: 100px;
+      background: var(--brown);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .hero-button:hover {
+      transform: translateY(-3px);
+    }
+
+    .hero-photo-wrap {
+      position: relative;
+      max-width: 450px;
+      margin: auto;
+    }
+
+    .hero-photo {
+      position: relative;
+      padding: 12px;
+      background: white;
+      box-shadow: 0 30px 70px rgba(67,46,42,.18);
+      transform: rotate(3deg);
+    }
+
+    .hero-photo img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .cowgirl-sticker {
+      position: absolute;
+      bottom: -22px;
+      left: -25px;
+      background: var(--pink);
+      color: white;
+      border: 5px solid white;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transform: rotate(-10deg);
+      font-size: 14px;
+      line-height: 1.3;
+      box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    }
+
+    /* ---------------------------------
+       COUNTDOWN
+    ---------------------------------- */
+
+    .countdown-section {
+      background: var(--brown);
+      color: white;
+      padding: 65px 20px;
+    }
+
+    .countdown-heading {
+      text-align: center;
+      font-family: "Rye", serif;
+      font-size: clamp(27px, 4vw, 42px);
+      margin-bottom: 35px;
+    }
+
+    .countdown {
+      width: min(750px, 100%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .count-box {
+      text-align: center;
+      padding: 24px 10px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 20px;
+      background: rgba(255,255,255,.07);
+    }
+
+    .count-number {
+      display: block;
+      font-size: clamp(30px, 6vw, 52px);
+      font-weight: 700;
+    }
+
+    .count-label {
+      display: block;
+      margin-top: 5px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: .75;
+    }
+
+    /* ---------------------------------
+       PARTY INTRO
+    ---------------------------------- */
+
+    .party-intro {
+      background: var(--cream);
+    }
+
+    .party-card {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: white;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 25px 70px rgba(67,46,42,.08);
+    }
+
+    .party-card-image img {
+      height: 100%;
+      min-height: 450px;
+      object-fit: cover;
+    }
+
+    .party-card-content {
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .party-card-content h3 {
+      font-size: 36px;
+      color: var(--brown);
+      margin-bottom: 20px;
+    }
+
+    .party-card-content p {
+      line-height: 1.8;
+      color: #725D58;
+      margin-bottom: 15px;
+    }
+
+    .location-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 15px;
+      font-weight: 700;
+      color: var(--pink);
+    }
+
+    /* ---------------------------------
+       SCHEDULE
+    ---------------------------------- */
+
+    .schedule-section {
+      background: var(--blue);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .schedule {
+      width: min(800px, 100%);
+      margin: 55px auto 0;
+      position: relative;
+    }
+
+    .schedule::before {
+      content: "";
+      position: absolute;
+      left: 94px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: rgba(106,64,54,.25);
+    }
+
+    .schedule-item {
+      display: grid;
+      grid-template-columns: 75px 1fr;
+      gap: 40px;
+      margin-bottom: 35px;
+      position: relative;
+    }
+
+    .schedule-time {
+      font-weight: 700;
+      color: var(--brown);
+      padding-top: 23px;
+      text-align: right;
+    }
+
+    .schedule-content {
+      background: rgba(255,255,255,.75);
+      padding: 25px 30px;
+      border-radius: 20px;
+      position: relative;
+    }
+
+    .schedule-content::before {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background: var(--pink);
+      border: 4px solid var(--blue);
+      border-radius: 50%;
+      left: -30px;
+      top: 25px;
+    }
+
+    .schedule-content h3 {
+      font-family: "DM Sans", sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 7px;
+    }
+
+    .schedule-content p {
+      color: #6F5A55;
+      line-height: 1.6;
+    }
+
+    /* ---------------------------------
+       PHOTOS
+    ---------------------------------- */
+
+    .gallery-section {
+      background: var(--cream);
+    }
+
+    .gallery {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      align-items: center;
+    }
+
+    .polaroid {
+      background: white;
+      padding: 10px 10px 42px;
+      box-shadow: 0 18px 45px rgba(67,46,42,.12);
+    }
+
+    .polaroid img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .polaroid:nth-child(1) {
+      transform: rotate(-4deg);
+    }
+
+    .polaroid:nth-child(2) {
+      transform: translateY(-18px) rotate(2deg);
+    }
+
+    .polaroid:nth-child(3) {
+      transform: rotate(4deg);
+    }
+
+    /* ---------------------------------
+       DRESS CODE
+    ---------------------------------- */
+
+    .dress-code {
+      background: var(--soft-pink);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dress-code-inner {
+      width: min(850px, 100%);
+      margin: auto;
+      background: rgba(255,255,255,.72);
+      border-radius: 35px;
+      padding: 70px 45px;
+      backdrop-filter: blur(10px);
+    }
+
+    .dress-code-icon {
+      font-size: 55px;
+      margin-bottom: 20px;
+    }
+
+    .dress-code h2 {
+      color: var(--brown);
+      font-size: clamp(42px, 7vw, 70px);
+    }
+
+    .dress-code h3 {
+      font-family: "DM Sans", sans-serif;
+      font-size: 22px;
+      margin-top: 20px;
+      color: var(--pink);
+    }
+
+    .dress-code p {
+      max-width: 620px;
+      margin: 18px auto 0;
+      line-height: 1.8;
+      color: #684F49;
+    }
+
+    .western-items {
+      margin-top: 30px;
+      font-size: 27px;
+      letter-spacing: 10px;
+    }
+
+    .dress-examples {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .dress-chip {
+      background: white;
+      padding: 9px 15px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--brown);
+    }
+
+    /* ---------------------------------
+       RSVP
+    ---------------------------------- */
+
+    .rsvp-section {
+      background: var(--cream);
+    }
+
+    .rsvp-card {
+      width: min(720px, 100%);
+      margin: 55px auto 0;
+      background: white;
+      padding: 50px;
+      border-radius: 30px;
+      box-shadow: 0 25px 70px rgba(67,46,42,.08);
+    }
+
+    .rsvp-question {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .attendance-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .attendance-btn {
+      border: 2px solid var(--soft-pink);
+      background: white;
+      color: var(--brown);
+      border-radius: 15px;
+      padding: 17px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .attendance-btn:hover {
+      background: #FFF2F6;
+    }
+
+    .attendance-btn.selected {
+      background: var(--pink);
+      border-color: var(--pink);
+      color: white;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--brown);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid #E8DCD8;
+      border-radius: 13px;
+      padding: 14px 15px;
+      background: #FFFCFA;
+      outline: none;
+      transition: .2s ease;
+    }
+
+    .form-group textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--pink);
+    }
+
+    #guestFields {
+      display: none;
+    }
+
+    .submit-btn {
+      width: 100%;
+      border: none;
+      border-radius: 100px;
+      padding: 17px;
+      background: var(--brown);
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .25s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      background: var(--pink);
+    }
+
+    .form-message {
+      display: none;
+      text-align: center;
+      margin-top: 25px;
+      background: var(--blue);
+      border-radius: 15px;
+      padding: 20px;
+      line-height: 1.6;
+      color: var(--brown);
+      font-weight: 600;
+    }
+
+    /* ---------------------------------
+       FINAL SECTION
+    ---------------------------------- */
+
+    .final-section {
+      min-height: 70vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--brown);
+      color: white;
+    }
+
+    .final-photo {
+      min-height: 600px;
+    }
+
+    .final-photo img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .final-copy {
+      padding: 70px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .final-copy .small {
+      color: var(--blue);
+      letter-spacing: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .final-copy h2 {
+      font-size: clamp(45px, 7vw, 80px);
+      line-height: 1.05;
+    }
+
+    .final-copy p {
+      margin-top: 25px;
+      line-height: 1.8;
+      max-width: 450px;
+      color: rgba(255,255,255,.8);
+    }
+
+    .signature {
+      color: var(--soft-pink);
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    /* ---------------------------------
+       MOBILE
+    ---------------------------------- */
+
+    @media (max-width: 850px) {
+
+      .section {
+        padding: 75px 20px;
+      }
+
+      .hero {
+        padding-top: 55px;
+        padding-bottom: 75px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+      }
+
+      .hero-copy {
+        margin: auto;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-details {
+        justify-content: center;
+      }
+
+      .hero-photo-wrap {
+        width: min(360px, 90%);
+      }
+
+      .party-card {
+        grid-template-columns: 1fr;
+      }
+
+      .party-card-content {
+        padding: 40px 30px;
+      }
+
+      .party-card-image img {
+        min-height: 350px;
+        max-height: 500px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 45px;
+      }
+
+      .polaroid:nth-child(2) {
+        transform: rotate(2deg);
+      }
+
+      .final-section {
+        grid-template-columns: 1fr;
+      }
+
+      .final-photo {
+        min-height: 500px;
+      }
+
+      .final-copy {
+        padding: 65px 30px;
+        text-align: center;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .schedule::before {
+        left: 13px;
+      }
+
+      .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding-left: 40px;
+      }
+
+      .schedule-time {
+        text-align: left;
+        padding-top: 0;
+      }
+
+      .schedule-content::before {
+        left: -34px;
+        top: 23px;
+      }
+
+      .attendance-options {
+        grid-template-columns: 1fr;
+      }
+
+      .rsvp-card {
+        padding: 35px 20px;
+      }
+
+      .dress-code-inner {
+        padding: 55px 22px;
+      }
+
+      .western-items {
+        letter-spacing: 4px;
+      }
+
+      .hero h1 {
+        font-size: 58px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ========================================
+       HERO
+  ========================================= -->
+
+  <section class="hero">
+
+    <div class="hero-star star-one">★</div>
+    <div class="hero-star star-two">★</div>
+
+    <div class="hero-inner">
+
+      <div class="hero-copy">
+
+        <p class="mini-text">
+          You're invited
+        </p>
+
+        <h1>
+          MARIA'S
+          <span>BIRTHDAY</span>
+        </h1>
+
+        <p class="hero-description">
+          Saddle up, cowgirls! We're celebrating Maria's birthday
+          with photos, horses, dinner and a little Wild West magic.
+        </p>
+
+        <div class="hero-details">
+
+          <div class="hero-pill">
+            23 NOVEMBER 2026
+          </div>
+
+          <div class="hero-pill">
+            13:00
+          </div>
+
+          <div class="hero-pill">
+            MANCUS ECO PARK
+          </div>
+
+        </div>
+
+        <a href="#rsvp" class="hero-button">
+          RSVP 🤠
+        </a>
+
+      </div>
+
+
+      <div class="hero-photo-wrap">
+
+        <div class="hero-photo">
+          <img
+            src="IMG_4026.jpg"
+            alt="Maria"
+          >
+        </div>
+
+        <div class="cowgirl-sticker western">
+          WILD<br>
+          WEST<br>
+          PARTY
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       COUNTDOWN
+  ========================================= -->
+
+  <section class="countdown-section">
+
+    <h2 class="countdown-heading">
+      Countdown to the Wild West ✦
+    </h2>
+
+    <div class="countdown">
+
+      <div class="count-box">
+        <span class="count-number" id="days">00</span>
+        <span class="count-label">Days</span>
+      </div>
+
+      <div class="count-box">
+        <span class="count-number" id="hours">00</span>
+        <span class="count-label">Hours</span>
+      </div>
+
+      <div class="count-box">
+        <span class="count-number" id="minutes">00</span>
+        <span class="count-label">Minutes</span>
+      </div>
+
+      <div class="count-box">
+        <span class="count-number" id="seconds">00</span>
+        <span class="count-label">Seconds</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       PARTY
+  ========================================= -->
+
+  <section class="section party-intro">
+
+    <div class="container">
+
+      <div class="center">
+
+        <p class="eyebrow">
+          Save the date
+        </p>
+
+        <h2 class="section-title">
+          A Birthday Adventure
+        </h2>
+
+        <p class="section-intro">
+          Join us for a special afternoon celebrating Maria
+          surrounded by nature, horses, friends and birthday magic.
+        </p>
+
+      </div>
+
+
+      <div class="party-card">
+
+        <div class="party-card-image">
+
+          <img
+            src="IMG_4027.jpg"
+            alt="Maria's birthday"
+          >
+
+        </div>
+
+
+        <div class="party-card-content">
+
+          <p class="eyebrow">
+            The destination
+          </p>
+
+          <h3>
+            Mancus Eco Park
+          </h3>
+
+          <p>
+            Get ready for an afternoon outside the city filled
+            with photos, horse riding and a birthday dinner
+            celebrating Maria.
+          </p>
+
+          <p>
+            The adventure begins at
+            <strong>13:00</strong>
+            and finishes at
+            <strong>20:00</strong>.
+          </p>
+
+          <div class="location-tag">
+            📍 Dzoraghbyur, Armenia
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       SCHEDULE
+  ========================================= -->
+
+  <section class="section schedule-section">
+
+    <div class="container">
+
+      <div class="center">
+
+        <p class="eyebrow">
+          23 November
+        </p>
+
+        <h2 class="section-title">
+          Our Birthday Schedule
+        </h2>
+
+        <p class="section-intro">
+          Hats ready. Cameras ready. Here's what we have planned.
+        </p>
+
+      </div>
+
+
+      <div class="schedule">
+
+        <div class="schedule-item">
+
+          <div class="schedule-time">
+            13:00
+          </div>
+
+          <div class="schedule-content">
+
+            <h3>
+              Welcome, Cowgirls! 🤠
+            </h3>
+
+            <p>
+              Arrival at Mancus Eco Park and time to get
+              ready for our birthday adventure.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="schedule-item">
+
+          <div class="schedule-time">
+            13:00
+          </div>
+
+          <div class="schedule-content">
+
+            <h3>
+              Birthday Photoshoot 📸
+            </h3>
+
+            <p>
+              From 13:00 to 14:00, we're capturing our
+              best cowgirl looks.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="schedule-item">
+
+          <div class="schedule-time">
+            14:00
+          </div>
+
+          <div class="schedule-content">
+
+            <h3>
+              Horse Riding 🐎
+            </h3>
+
+            <p>
+              Saddle up! It's time for the Wild West part
+              of our afternoon.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="schedule-item">
+
+          <div class="schedule-time">
+            17:00
+          </div>
+
+          <div class="schedule-content">
+
+            <h3>
+              Birthday Dinner 🎂
+            </h3>
+
+            <p>
+              Dinner, cake, birthday wishes and time to
+              celebrate Maria together.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="schedule-item">
+
+          <div class="schedule-time">
+            20:00
+          </div>
+
+          <div class="schedule-content">
+
+            <h3>
+              Home Time 🤍
+            </h3>
+
+            <p>
+              Parents can pick up the children from
+              Mancus Eco Park at 20:00.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       PHOTO MOMENTS
+  ========================================= -->
+
+  <section class="section gallery-section">
+
+    <div class="container">
+
+      <div class="center">
+
+        <p class="eyebrow">
+          Birthday girl
+        </p>
+
+        <h2 class="section-title">
+          Meet Our Cowgirl
+        </h2>
+
+        <p class="section-intro">
+          One birthday girl, one unforgettable afternoon
+          and plenty of memories waiting to happen.
+        </p>
+
+      </div>
+
+
+      <div class="gallery">
+
+        <div class="polaroid">
+
+          <img
+            src="IMG_4027.jpg"
+            alt="Maria"
+          >
+
+        </div>
+
+
+        <div class="polaroid">
+
+          <img
+            src="IMG_4028.jpg"
+            alt="Maria"
+          >
+
+        </div>
+
+
+        <div class="polaroid">
+
+          <img
+            src="IMG_4029.jpg"
+            alt="Maria"
+          >
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       DRESS CODE
+  ========================================= -->
+
+  <section class="section dress-code">
+
+    <div class="dress-code-inner">
+
+      <div class="dress-code-icon">
+        🤠
+      </div>
+
+      <p class="eyebrow">
+        Dress code
+      </p>
+
+      <h2>
+        COWBOY
+      </h2>
+
+      <h3>
+        Boots on. Hats ready.
+      </h3>
+
+      <p>
+        We're going Western! Come dressed in your best
+        cowboy or cowgirl-inspired outfit.
+        Think denim, cowboy hats, boots, fringe,
+        bandanas and everything Wild West.
+      </p>
+
+      <div class="western-items">
+        👢 ✦ 🤠 ✦ 🐎
+      </div>
+
+      <div class="dress-examples">
+
+        <span class="dress-chip">
+          Cowboy Hats
+        </span>
+
+        <span class="dress-chip">
+          Denim
+        </span>
+
+        <span class="dress-chip">
+          Boots
+        </span>
+
+        <span class="dress-chip">
+          Fringe
+        </span>
+
+        <span class="dress-chip">
+          Bandanas
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       RSVP
+  ========================================= -->
+
+  <section
+    class="section rsvp-section"
+    id="rsvp"
+  >
+
+    <div class="container">
+
+      <div class="center">
+
+        <p class="eyebrow">
+          RSVP
+        </p>
+
+        <h2 class="section-title">
+          Are You Saddling Up With Us?
+        </h2>
+
+        <p class="section-intro">
+          Let us know whether you'll be joining Maria's
+          Wild West birthday adventure.
+        </p>
+
+      </div>
+
+
+      <div class="rsvp-card">
+
+        <form id="rsvpForm">
+
+          <p class="rsvp-question">
+            Will you be joining us?
+          </p>
+
+
+          <div class="attendance-options">
+
+            <button
+              type="button"
+              class="attendance-btn"
+              id="yesButton"
+              onclick="chooseAttendance('yes')"
+            >
+              YES, I'LL BE THERE! 🤠
+            </button>
+
+            <button
+              type="button"
+              class="attendance-btn"
+              id="noButton"
+              onclick="chooseAttendance('no')"
+            >
+              SORRY, CAN'T MAKE IT 🤍
+            </button>
+
+          </div>
+
+
+          <input
+            type="hidden"
+            id="attendance"
+            name="attendance"
+          >
+
+
+          <div class="form-group">
+
+            <label for="guestName">
+              YOUR NAME
+            </label>
+
+            <input
+              type="text"
+              id="guestName"
+              name="guestName"
+              placeholder="Your name"
+              required
+            >
+
+          </div>
+
+
+          <div id="guestFields">
+
+            <div class="form-group">
+
+              <label for="guestCount">
+                HOW MANY PEOPLE ARE COMING?
+              </label>
+
+              <select
+                id="guestCount"
+                name="guestCount"
+              >
+
+                <option value="1">
+                  1 person
+                </option>
+
+                <option value="2">
+                  2 people
+                </option>
+
+                <option value="3">
+                  3 people
+                </option>
+
+                <option value="4">
+                  4 people
+                </option>
+
+                <option value="5">
+                  5 people
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="guestNames">
+                GUEST NAME(S)
+              </label>
+
+              <input
+                type="text"
+                id="guestNames"
+                name="guestNames"
+                placeholder="Names of the guests"
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="message">
+              ANYTHING MARIA SHOULD KNOW? — OPTIONAL
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Leave a little message..."
+            ></textarea>
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="submit-btn"
+          >
+            SEND RSVP ✦
+          </button>
+
+
+          <div
+            class="form-message"
+            id="formMessage"
+          ></div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       FINAL
+  ========================================= -->
+
+  <section class="final-section">
+
+    <div class="final-photo">
+
+      <img
+        src="IMG_4026.jpg"
+        alt="Maria"
+      >
+
+    </div>
+
+
+    <div class="final-copy">
+
+      <p class="small">
+        See you there
+      </p>
+
+      <h2>
+        Let's Make
+        Some Wild
+        Memories.
+      </h2>
+
+      <p>
+        We can't wait to celebrate Maria's birthday
+        with an afternoon full of laughter, horses,
+        photos and unforgettable moments.
+      </p>
+
+      <div class="signature">
+        With love, Maria ♡
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       JAVASCRIPT
+  ========================================= -->
+
+  <script>
+
+    /* ---------------------------------
+       COUNTDOWN
+    ---------------------------------- */
+
+    const birthdayDate =
+      new Date("2026-11-23T13:00:00").getTime();
+
+
+    function updateCountdown() {
+
+      const now = new Date().getTime();
+
+      const distance =
+        birthdayDate - now;
+
+
+      if (distance <= 0) {
+
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
+        return;
+      }
+
+
+      const days =
+        Math.floor(
+          distance / (1000 * 60 * 60 * 24)
+        );
+
+
+      const hours =
+        Math.floor(
+          (distance % (1000 * 60 * 60 * 24))
+          / (1000 * 60 * 60)
+        );
+
+
+      const minutes =
+        Math.floor(
+          (distance % (1000 * 60 * 60))
+          / (1000 * 60)
+        );
+
+
+      const seconds =
+        Math.floor(
+          (distance % (1000 * 60))
+          / 1000
+        );
+
+
+      document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+      document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+      document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+      document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+
+    }
+
+
+    updateCountdown();
+
+    setInterval(
+      updateCountdown,
+      1000
+    );
+
+
+    /* ---------------------------------
+       RSVP CHOICE
+    ---------------------------------- */
+
+    let attendanceChoice = "";
+
+
+    function chooseAttendance(choice) {
+
+      attendanceChoice = choice;
+
+      const attendance =
+        document.getElementById("attendance");
+
+      const yesButton =
+        document.getElementById("yesButton");
+
+      const noButton =
+        document.getElementById("noButton");
+
+      const guestFields =
+        document.getElementById("guestFields");
+
+
+      attendance.value = choice;
+
+
+      yesButton.classList.remove("selected");
+
+      noButton.classList.remove("selected");
+
+
+      if (choice === "yes") {
+
+        yesButton.classList.add("selected");
+
+        guestFields.style.display = "block";
+
+      } else {
+
+        noButton.classList.add("selected");
+
+        guestFields.style.display = "none";
+
+      }
+
+    }
+
+
+    /* ---------------------------------
+       RSVP FORM
+    ---------------------------------- */
+
+    document
+      .getElementById("rsvpForm")
+      .addEventListener(
+        "submit",
+        function(event) {
+
+          event.preventDefault();
+
+
+          const name =
+            document
+              .getElementById("guestName")
+              .value
+              .trim();
+
+
+          const message =
+            document
+              .getElementById("formMessage");
+
+
+          if (!attendanceChoice) {
+
+            alert(
+              "Please tell us whether you'll be joining the party."
+            );
+
+            return;
+
+          }
+
+
+          if (!name) {
+
+            alert(
+              "Please enter your name."
+            );
+
+            return;
+
+          }
+
+
+          if (attendanceChoice === "yes") {
+
+            const guestCount =
+              document
+                .getElementById("guestCount")
+                .value;
+
+
+            message.innerHTML =
+              "Yeehaw, <strong>" +
+              name +
+              "</strong>! 🤠🐎<br>" +
+              "You're on Maria's guest list for " +
+              guestCount +
+              " guest" +
+              (guestCount === "1" ? "" : "s") +
+              ". We can't wait to celebrate with you!";
+
+          } else {
+
+            message.innerHTML =
+              "Thank you for letting us know, <strong>" +
+              name +
+              "</strong>. 🤍<br>" +
+              "Maria will miss you at the party!";
+
+          }
+
+
+          message.style.display = "block";
+
+
+          message.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>
